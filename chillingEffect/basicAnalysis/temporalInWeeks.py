@@ -162,16 +162,10 @@ def readData(inputPath, missDateC, missTypeC):
 if __name__ == '__main__':
     missDateC = 0
     missTypeC = 0
-    inputPath = '/Users/JuntingYe/Desktop/network/dataset/chillingMetadata'
-    outputFigPathDmcadays = '/Users/JuntingYe/Desktop/network/dataset/chillingMetadataDmcainweeks.pdf'
-    outputFigPathRemaindays = '/Users/JuntingYe/Desktop/network/dataset/chillingMetadataRemaininweeks.pdf'
+    basepath= '../sourceData/'
+    inputPath = basepath+'chillingMetadata'
+    outputFigPathDmcadays = basepath+'chillingMetadataDmcainweeks.pdf'
+    outputFigPathRemaindays = basepath+'chillingMetadataRemaininweeks.pdf'
     dmcaDic, defameDic, courtDic, otherDic, tradeMarkDic, noexistDic, missDateC, missTypeC = readData(inputPath, missDateC, missTypeC)
     printplotDmca(dmcaDic, defameDic, outputFigPathDmcadays)
     printplotRemain(courtDic, otherDic, tradeMarkDic, noexistDic, outputFigPathRemaindays)
-    print missDateC, missTypeC
-    print sum(dmcaDic.values()), sum(defameDic.values()), sum(courtDic.values()), sum(otherDic.values()), sum(tradeMarkDic.values())
-    
-    
-    
-    
-    
